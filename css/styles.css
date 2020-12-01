@@ -1,3 +1,8 @@
-/* accent-color {
-background-color: #1C448E
-} */
+
+header > h1 {
+  margin: auto;
+  padding: 0.5% 0 0 15%;
+  height: 60px;
+  background-color: #1c448e;
+  color: white;
+}
