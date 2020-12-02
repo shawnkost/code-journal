@@ -4,6 +4,7 @@ header > h1 {
   height: 60px;
   background-color: #1c448e;
   color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 form {
@@ -12,6 +13,7 @@ form {
 
 .edit-h1 {
   padding-left: 20%;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-col1 {
@@ -35,15 +37,17 @@ input,
 label {
   display: block;
   margin-bottom: 2%;
+  font-family: "Poppins", sans-serif;
 }
 
 input {
   height: 47px;
   width: 400px;
+  font-family: "PT Serif", serif;
 }
 
 input:not(#location) {
-  margin-bottom: 12%;
+  margin-bottom: 11%;
 }
 
 .bio {
@@ -51,6 +55,6 @@ input:not(#location) {
 }
 
 textarea {
-  width: 68.3%;
+  width: 68.6%;
   height: 150px;
 }
