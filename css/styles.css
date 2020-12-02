@@ -131,4 +131,18 @@
     border-radius: 4px;
     width: 14%;
   }
+
+  .column-half:not(.profile-details) {
+    padding-left: 20%;
+  }
+
+  .img2 {
+    width: 100%;
+  }
+
+  .username-text {
+    display: inline-block;
+    position: relative;
+    bottom: 18px;
+  }
 }
