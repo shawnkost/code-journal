@@ -10,7 +10,6 @@ $avatar.addEventListener('input', function (event) {
 var $form = document.querySelector('form');
 
 $form.addEventListener('submit', function (event) {
-  event.preventDefault();
   data.profile.avatarUrl = event.target[0].value;
   data.profile.username = event.target[1].value;
   data.profile.fullName = event.target[2].value;
