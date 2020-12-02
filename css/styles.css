@@ -140,9 +140,18 @@
     width: 100%;
   }
 
-  .username-text {
+  .detail-text {
     display: inline-block;
     position: relative;
     bottom: 18px;
+    font-family: "PT Serif", serif;
+  }
+
+  .bio-text {
+    font-family: "PT Serif", serif;
+  }
+
+  .container {
+    padding-bottom: 1%;
   }
 }
