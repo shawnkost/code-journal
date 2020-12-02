@@ -1,5 +1,7 @@
 var $avatar = document.querySelector('#avatar-url');
 
-$avatar.addEventListener('input', function (event) {
+var $img = document.querySelector('.img');
 
+$avatar.addEventListener('input', function (event) {
+  $img.setAttribute('src', event.target.value);
 });
