@@ -2,22 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
   <title>Code Journal</title>
   <link
     rel="stylesheet"
     crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
+    <h3>Code Journal</h3>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile">
+      <h1 class="edit-h1">Edit Profile</h1>
+      <form action="index.html" method="POST" id="form1">
+        <div class="form-col1">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder" class="img">
+        </div>
+        <div class="form-col2">
+          <div class="avatar-container fcontainer">
+            <label for="avatar-url">Avatar URL</label>
+            <input id="avatar-url" type="url" name="avatar-url" required>
+          </div>
+          <div class="username-container fcontainer">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" required>
+          </div>
+          <div class="fname-container fcontainer">
+            <label for="fname">Full Name</label>
+            <input id="fname" type="text" name="fname" required>
+          </div>
+          <div class="location-container fcontainer">
+            <label for="location">Location</label>
+            <input id="location" type="text" name="location" required>
+          </div>
+       </div>
+       <div class="bio-row">
+         <label for="bio" class="bio">Bio</label>
+         <textarea id="bio" name="bio"></textarea>
+       </div>
+       <div class="button-container">
+       <button type="submit" form="form1" value="submit" class="button">Save</button>
+      </div>
+     </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
