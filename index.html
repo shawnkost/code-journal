@@ -22,7 +22,36 @@
     <h1>Code Journal</h1>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div data-view="edit-profile">
+      <h1 class="edit-h1">Edit Profile</h1>
+      <form action="index.html" method="GET">
+        <div class="form-col1">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder">
+        </div>
+        <div class="form-col2">
+          <div class="avatar-container fcontainer">
+            <label for="avatar-url">Avatar URL</label>
+            <input id="avatar-url" type="url" name="avatar-url">
+          </div>
+          <div class="username-container fcontainer">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username">
+          </div>
+          <div class="fname-container fcontainer">
+            <label for="fname">Full Name</label>
+            <input id="fname" type="text" name="fname">
+          </div>
+          <div class="location-container fcontainer">
+            <label for="location">Location</label>
+            <input id="location" type="text" name="location">
+          </div>
+       </div>
+       <div class="bio-row">
+         <label for="bio" class="bio">Bio</label>
+         <textarea id="bio" name="bio"></textarea>
+       </div>
+     </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
