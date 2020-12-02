@@ -52,6 +52,32 @@
     border-radius: 4px;
     width: 14%;
   }
+
+  .column-half:not(.profile-details) {
+    padding-left: 5%;
+    padding-bottom: 4%;
+  }
+
+  .img2 {
+    width: 94%;
+  }
+
+  .detail-text {
+    display: inline-block;
+    position: relative;
+    bottom: 18px;
+    padding-left: 5px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .bio-text {
+    padding-left: 1%;
+    font-family: "PT Serif", serif;
+  }
+
+  .container {
+    padding: 0 5% 3% 3%;
+  }
 }
 
 @media screen and (min-width: 376px) {
@@ -144,7 +170,8 @@
     display: inline-block;
     position: relative;
     bottom: 18px;
-    font-family: "PT Serif", serif;
+    padding-left: 5px;
+    font-family: "Poppins", sans-serif;
   }
 
   .bio-text {
