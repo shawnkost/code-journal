@@ -22,10 +22,6 @@
     border: 2px solid black;
   }
 
-  .form-col2 {
-    vertical-align: top;
-  }
-
   input,
   label {
     font-family: "Poppins", sans-serif;
@@ -37,10 +33,6 @@
     margin-bottom: 4%;
     font-family: "PT Serif", serif;
     border: 2px solid black;
-  }
-
-  .bio {
-    margin: 1% 0;
   }
 
   textarea {
