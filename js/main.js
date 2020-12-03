@@ -31,14 +31,13 @@ function domTree(profile) {
   var div1 = document.createElement('div');
   div1.setAttribute('data-view', 'profile');
 
-  var div2 = document.querySelector('.edit-h1');
-  var div2copy = div2.cloneNode(true);
-  div1.appendChild(div2copy);
+  var div2 = document.createElement('div');
+  div2.setAttribute('class', 'edit-h1');
+  div1.appendChild(div2);
 
   var h1 = document.querySelector('.fname-text');
-  var h1copy = h1.cloneNode(true);
   h1.textContent = data.profile.fullName;
-  div2.appendChild(h1copy);
+  div2.appendChild(h1);
 
   var div3 = document.createElement('div');
   div3.setAttribute('class', 'row');
@@ -109,6 +108,7 @@ function viewSwap(dataView) {
   } else {
     $showProfile.className = 'show-profile';
   }
+  data.view = dataView;
 }
 
 viewSwap('edit-profile');
