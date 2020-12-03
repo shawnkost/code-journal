@@ -35,7 +35,8 @@ function domTree(profile) {
   div2.setAttribute('class', 'edit-h1');
   div1.appendChild(div2);
 
-  var h1 = document.querySelector('.fname-text');
+  var h1 = document.createElement('h1');
+  h1.setAttribute('class', 'fname-text');
   h1.textContent = data.profile.fullName;
   div2.appendChild(h1);
 
@@ -47,7 +48,8 @@ function domTree(profile) {
   div4.setAttribute('class', 'column-half');
   div3.appendChild(div4);
 
-  var userPhoto = document.querySelector('.img2');
+  var userPhoto = document.createElement('img');
+  userPhoto.setAttribute('class', 'img img2');
   userPhoto.setAttribute('src', data.profile.avatarUrl);
   div4.appendChild(userPhoto);
 
@@ -59,10 +61,14 @@ function domTree(profile) {
   div6.setAttribute('class', 'container');
   div5.appendChild(div6);
 
-  var icon1 = document.querySelector('.icon1');
+  var icon1 = document.createElement('img');
+  icon1.setAttribute('src', 'images/icons8-name-50.png');
+  icon1.setAttribute('alt', 'user-photo');
+  icon1.setAttribute('class', 'icon1');
   div6.appendChild(icon1);
 
-  var div7 = document.querySelector('.username-text');
+  var div7 = document.createElement('div');
+  div7.setAttribute('class', 'detail-text username-text');
   div7.textContent = data.profile.username;
   div6.appendChild(div7);
 
@@ -70,10 +76,14 @@ function domTree(profile) {
   div8.setAttribute('class', 'container');
   div5.appendChild(div8);
 
-  var icon2 = document.querySelector('.icon2');
+  var icon2 = document.createElement('img');
+  icon2.setAttribute('src', 'images/icons8-location-50.png');
+  icon2.setAttribute('alt', 'location-icon8');
+  icon2.setAttribute('class', 'icon2');
   div8.appendChild(icon2);
 
-  var div9 = document.querySelector('.location-text');
+  var div9 = document.createElement('div');
+  div9.setAttribute('class', 'detail-text location-text');
   div9.textContent = data.profile.location;
   div8.appendChild(div9);
 
@@ -81,11 +91,13 @@ function domTree(profile) {
   div10.setAttribute('class', 'container');
   div5.appendChild(div10);
 
-  var p1 = document.querySelector('.bio-text1');
+  var p1 = document.createElement('div');
+  p1.setAttribute('class', 'bio-text bio-text1');
   p1.textContent = data.profile.bio;
   div10.appendChild(p1);
 
-  var p2 = document.querySelector('.bio-text2');
+  var p2 = document.createElement('div');
+  p2.setAttribute('class', 'bio-text bio-text2');
   p2.textContent = data.profile.bio;
   div10.appendChild(p2);
 
