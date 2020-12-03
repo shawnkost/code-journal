@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -22,26 +22,26 @@
     <h3>Code Journal</h3>
   </header>
   <main>
-    <div data-view="edit-profile">
+    <div class="profile-form hidden" data-view="edit-profile">
       <h1 class="edit-h1">Edit Profile</h1>
       <form action="index.html" method="POST" id="form1">
         <div class="form-col1">
           <img src="images/placeholder-image-square.jpg" alt="placeholder" class="img">
         </div>
         <div class="form-col2">
-          <div class="avatar-container fcontainer">
+          <div class="avatar-container">
             <label for="avatar-url">Avatar URL</label>
             <input id="avatar-url" type="url" name="avatar-url" required>
           </div>
-          <div class="username-container fcontainer">
+          <div class="username-container">
             <label for="username">Username</label>
             <input id="username" type="text" name="username" required>
           </div>
-          <div class="fname-container fcontainer">
+          <div class="fname-container">
             <label for="fname">Full Name</label>
             <input id="fname" type="text" name="fname" required>
           </div>
-          <div class="location-container fcontainer">
+          <div class="location-container">
             <label for="location">Location</label>
             <input id="location" type="text" name="location" required>
           </div>
@@ -54,6 +54,8 @@
        <button type="submit" form="form1" value="submit" class="button">Save</button>
       </div>
      </form>
+    </div>
+    <div class="show-profile" data-view="profile">
     </div>
   </main>
   <script src="js/data.js"></script>
