@@ -107,6 +107,7 @@ function viewSwap(dataView) {
     $showProfile.className = 'hidden show-profile';
   } else {
     $showProfile.className = 'show-profile';
+    $showProfile.innerHTML = '';
   }
   data.view = dataView;
 }
