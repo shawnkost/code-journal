@@ -111,6 +111,11 @@ function domTree(profile) {
   p1.setAttribute('class', 'bio-text bio-text1');
   p1.textContent = data.profile.bio;
   div10.appendChild(p1);
+
+  var linkButton = document.createElement('button');
+  linkButton.setAttribute('href', '#');
+  linkButton.setAttribute('data-view', 'edit-profile');
+  div10.appendChild(linkButton);
   return div1;
 }
 
