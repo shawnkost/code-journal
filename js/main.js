@@ -151,6 +151,7 @@ function viewSwap(dataView, domResult) {
     $formLocation.value = data.profile.location;
 
     $formBio.value = data.profile.bio;
+
   }
 
   if (dataView !== $showProfile.dataset.view) {
