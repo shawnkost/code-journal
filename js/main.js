@@ -113,6 +113,10 @@ function viewSwap(dataView, domResult) {
   data.view = dataView;
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-
-)}
+document.addEventListener('DOMContentLoaded', function (event) {
+  if (data.profile.username === '') {
+    viewSwap('edit-profile');
+  } else {
+    viewSwap(data.view, domResult);
+  }
+});
