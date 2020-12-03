@@ -182,4 +182,9 @@
   .container {
     padding-bottom: 1%;
   }
+
+  .button-link {
+    border-radius: 5px;
+    background-color: gray;
+  }
 }

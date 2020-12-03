@@ -112,9 +112,11 @@ function domTree(profile) {
   p1.textContent = data.profile.bio;
   div10.appendChild(p1);
 
-  var linkButton = document.createElement('button');
+  var linkButton = document.createElement('a');
   linkButton.setAttribute('href', '#');
   linkButton.setAttribute('data-view', 'edit-profile');
+  linkButton.setAttribute("class", "button-link")
+  linkButton.textContent = "fuck my life";
   div10.appendChild(linkButton);
   return div1;
 }
@@ -185,5 +187,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     viewSwap(data.view, domResult);
 
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target.tagName !== "A") {
+    return;
   }
 });
