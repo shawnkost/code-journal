@@ -95,12 +95,6 @@ function domTree(profile) {
   p1.setAttribute('class', 'bio-text bio-text1');
   p1.textContent = data.profile.bio;
   div10.appendChild(p1);
-
-  var p2 = document.createElement('div');
-  p2.setAttribute('class', 'bio-text bio-text2');
-  p2.textContent = data.profile.bio;
-  div10.appendChild(p2);
-
   return div1;
 }
 
