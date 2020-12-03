@@ -32,11 +32,13 @@ function domTree(profile) {
   div1.setAttribute('data-view', 'profile');
 
   var div2 = document.querySelector('.edit-h1');
-  div1.appendChild(div2);
+  var div2copy = div2.cloneNode(true);
+  div1.appendChild(div2copy);
 
   var h1 = document.querySelector('.fname-text');
+  var h1copy = h1.cloneNode(true);
   h1.textContent = data.profile.fullName;
-  div2.appendChild(h1);
+  div2.appendChild(h1copy);
 
   var div3 = document.createElement('div');
   div3.setAttribute('class', 'row');
@@ -90,4 +92,23 @@ function domTree(profile) {
 
   return div1;
 }
+
 domTree(data.profile);
+
+var $editProfile = document.querySelectorAll('.profile-form')[0];
+var $showProfile = document.querySelectorAll('.show-profile')[0];
+
+function viewSwap(dataView) {
+  if (dataView !== $editProfile.dataset.view) {
+    $editProfile.className = 'hidden profile-form';
+  } else {
+    $editProfile.className = 'profile-form';
+  }
+  if (dataView !== $showProfile.dataset.view) {
+    $showProfile.className = 'hidden show-profile';
+  } else {
+    $showProfile.className = 'show-profile';
+  }
+}
+
+viewSwap('edit-profile');
