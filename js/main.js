@@ -92,12 +92,12 @@ function domTree(profile) {
   return div1;
 }
 
-domTree(data.profile);
+var domResult = domTree(data.profile);
 
 var $editProfile = document.querySelectorAll('.profile-form')[0];
 var $showProfile = document.querySelectorAll('.show-profile')[0];
 
-function viewSwap(dataView) {
+function viewSwap(dataView, domResult) {
   if (dataView !== $editProfile.dataset.view) {
     $editProfile.className = 'hidden profile-form';
   } else {
@@ -108,8 +108,9 @@ function viewSwap(dataView) {
   } else {
     $showProfile.className = 'show-profile';
     $showProfile.innerHTML = '';
+    $showProfile.appendChild(domResult);
   }
   data.view = dataView;
 }
 
-viewSwap('edit-profile');
+viewSwap('profile', domResult);
