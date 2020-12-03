@@ -113,4 +113,6 @@ function viewSwap(dataView, domResult) {
   data.view = dataView;
 }
 
-viewSwap('edit-profile', domResult);
+// document.addEventListener("DOMContentLoaded", function (event) {
+
+// )}
