@@ -235,3 +235,19 @@ $imageUrl.addEventListener('input', function (event) {
   $photoJournal.setAttribute('src', event.target.value);
 
 });
+
+var $form2 = document.querySelector('#form2');
+
+var newObj = {};
+
+$form2.addEventListener('submit', function (event) {
+
+  event.preventDefault();
+
+  newObj.imageUrl = event.target[0].value;
+
+  newObj.title = event.target[1].value;
+
+  newObj.notes = event.target[2].value;
+
+});
