@@ -270,10 +270,29 @@ body {
   }
 
   .entry-img {
-    width: 28%;
+    width: 75%;
   }
 
   .entry-photo {
     padding-left: 18.5%;
+    display: inline-block;
+    width: 49%;
+  }
+
+  .entry-text {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    padding-right: 30%;
+    font-family: "PT Serif", serif;
+  }
+
+  .entry-text > h3 {
+    font-family: "Poppins", sans-serif;
+  }
+
+  ol li {
+    list-style: none;
+    padding-bottom: 4%;
   }
 }
