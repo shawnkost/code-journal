@@ -250,4 +250,6 @@ $form2.addEventListener('submit', function (event) {
 
   newObj.notes = event.target[2].value;
 
+  data.entries = newObj;
+
 });
