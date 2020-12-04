@@ -191,8 +191,10 @@
   }
 
   .button-link {
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #1c448e;
+    color: white;
+    font-family: "Poppins", sans-serif;
   }
 
   a {

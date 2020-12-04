@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
   if (data.profile.username === '') {
 
     viewSwap('edit-profile');
+    $img.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   } else {
 
@@ -192,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 document.addEventListener('click', function (event) {
-  if (event.target.tagName === 'A') {
+  if (event.target.tagName === 'A' && data.profile.username !== '') {
     viewSwap(event.target.dataset.view);
   }
 });
