@@ -217,7 +217,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 document.addEventListener('click', function (event) {
+
   if (event.target.tagName === 'A' && data.profile.username !== '') {
+
     viewSwap(event.target.dataset.view);
+
   }
+
+});
+
+var $imageUrl = document.querySelector('#image-url');
+
+var $photoJournal = document.querySelector('.photo-journal');
+
+$imageUrl.addEventListener('input', function (event) {
+
+  $photoJournal.setAttribute('src', event.target.value);
+
 });
