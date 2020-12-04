@@ -19,6 +19,10 @@ body {
     display: inline-block;
   }
 
+  .profile-link {
+    padding-right: 2%;
+  }
+
   form {
     padding-left: 5%;
   }
