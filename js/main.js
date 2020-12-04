@@ -138,6 +138,10 @@ var $formLocation = document.querySelector('#location');
 
 var $formBio = document.querySelector('#bio');
 
+var $entries = document.querySelectorAll('.entries-view')[0];
+
+var $createEntry = document.querySelectorAll('.create-entry-view')[0];
+
 function viewSwap(dataView, domResult) {
   domResult = domTree(data.profile);
   if (dataView !== $editProfile.dataset.view) {
@@ -175,6 +179,26 @@ function viewSwap(dataView, domResult) {
     $showProfile.appendChild(domResult);
 
   }
+
+  if (dataView !== $entries.dataset.view) {
+
+    $entries.className = 'hidden entries-view';
+
+  } else {
+
+    $entries.className = 'entries-view';
+  }
+
+  if (dataView !== $createEntry.dataset.view) {
+
+    $createEntry.className = 'hidden create-entry-view';
+
+  } else {
+
+    $createEntry.className = 'create-entry-view';
+
+  }
+
   data.view = dataView;
 }
 
