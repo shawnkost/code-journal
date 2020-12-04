@@ -252,4 +252,6 @@ $form2.addEventListener('submit', function (event) {
 
   data.entries = newObj;
 
+  $photoJournal.setAttribute('src', 'images/placeholder-image-square.jpg');
+
 });
