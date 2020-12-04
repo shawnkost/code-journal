@@ -125,8 +125,6 @@ body {
 
   .entry-text {
     display: inline-block;
-
-    /* width: 49%; */
     vertical-align: top;
     padding-right: 7%;
     font-family: "PT Serif", serif;

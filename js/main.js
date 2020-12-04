@@ -142,8 +142,10 @@ var $entries = document.querySelectorAll('.entries-view')[0];
 
 var $createEntry = document.querySelectorAll('.create-entry-view')[0];
 
-function viewSwap(dataView, domResult) {
+function viewSwap(dataView, domResult, entryResult) {
   domResult = domTree(data.profile);
+  entryResult = entryTree(data.entries);
+
   if (dataView !== $editProfile.dataset.view) {
 
     $editProfile.className = 'hidden profile-form';
@@ -211,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
   } else {
 
-    viewSwap(data.view, domResult);
+    viewSwap(data.view, domResult, entryResult);
 
   }
 });
@@ -259,3 +261,34 @@ $form2.addEventListener('submit', function (event) {
   viewSwap('entries');
 
 });
+
+function entryTree(entries) {
+  var $ol = document.createElement('ol');
+
+  var $li1 = document.createElement('li');
+  $ol.appendChild($li1);
+
+  var $div = document.createElement('div');
+  $div.setAttribute('class', 'entry-photo');
+  $li1.appendChild($div);
+
+  var $img2 = document.createElement('img');
+  $img2.setAttribute('src', data.entries.imageUrl);
+  $div.appendChild($img2);
+
+  var $div2 = document.createElement('div');
+  $div2.setAttribute('class', 'entry-text');
+  $li1.appendChild($div2);
+
+  var $h3 = document.createElement('h3');
+  $h3.textContent = data.entries.title;
+  $div2.appendChild($h3);
+
+  var $p = document.createElement('p');
+  $p.textContent = data.entries.notes;
+  $div2.appendChild($p);
+
+  return $ol;
+}
+
+var entryResult = entryTree(data.entries);
