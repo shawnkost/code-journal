@@ -139,7 +139,7 @@ var $formLocation = document.querySelector('#location');
 var $formBio = document.querySelector('#bio');
 
 function viewSwap(dataView, domResult) {
-
+  domResult = domTree(data.profile);
   if (dataView !== $editProfile.dataset.view) {
 
     $editProfile.className = 'hidden profile-form';

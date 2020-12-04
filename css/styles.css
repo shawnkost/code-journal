@@ -81,13 +81,20 @@
 }
 
 @media screen and (min-width: 376px) {
+  header {
+    background-color: #1c448e;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+
   header > h3 {
     margin: auto;
-    padding: 0.7% 0 0 20%;
+    padding: 0.7% 2% 0 20%;
     height: 60px;
     background-color: #1c448e;
     color: white;
     font-family: "Poppins", sans-serif;
+    display: inline-block;
   }
 
   form {
@@ -185,6 +192,11 @@
 
   .button-link {
     border-radius: 5px;
-    background-color: gray;
+    background-color: #1c448e;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
