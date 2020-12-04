@@ -60,7 +60,31 @@
     <div class="show-profile" data-view="profile">
     </div>
     <div data-view="entries"></div>
-    <div data-view="create-entry"></div>
+    <div data-view="create-entry">
+      <h1 class="edit-h1">New Entry</h1>
+      <form action="index.html" method="POST" id="form2">
+        <div class="form-col1">
+          <img src="images/placeholder-image-square.jpg" alt="placeholder" class="img">
+        </div>
+        <div class="form-col2">
+          <div class="image-container">
+            <label for="image-url">Image URL</label>
+            <input id="image-url" type="url" name="image-url">
+          </div>
+          <div class="title container">
+            <label for="title">Title</label>
+            <input id="title" type="text" name="title">
+          </div>
+          <div class="notes-container">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes"></textarea>
+          </div>
+          <div class="button-container2">
+            <button type="submit" form="form2" value="submit" class="button2">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

@@ -232,4 +232,25 @@ body {
     background-color: #f2cc8f;
     font-family: "Poppins", sans-serif;
   }
+
+  #form2 {
+    height: 761px;
+  }
+
+  .notes-container {
+    position: relative;
+    top: 315px;
+    right: 649px;
+  }
+
+  #notes {
+    width: 1056px;
+  }
+
+  .button-container2 {
+    position: relative;
+    left: 47.8%;
+    top: 323px;
+    width: 36%;
+  }
 }
