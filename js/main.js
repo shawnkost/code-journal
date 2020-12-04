@@ -1,5 +1,7 @@
 var $avatar = document.querySelector('#avatar-url');
 
+// localStorage.setItem("code-journal", JSON.stringify(data));
+
 var $img = document.querySelector('.img');
 
 $avatar.addEventListener('input', function (event) {
@@ -39,7 +41,6 @@ window.addEventListener('beforeunload', function (event) {
   var dataJ = JSON.stringify(data);
 
   localStorage.setItem('code-journal', dataJ);
-
 });
 
 function domTree(profile) {
@@ -115,8 +116,8 @@ function domTree(profile) {
   var linkButton = document.createElement('a');
   linkButton.setAttribute('href', '#');
   linkButton.setAttribute('data-view', 'edit-profile');
-  linkButton.setAttribute("class", "button-link")
-  linkButton.textContent = "fuck my life";
+  linkButton.setAttribute('class', 'button-link');
+  linkButton.textContent = 'Edit Profile';
   div10.appendChild(linkButton);
   return div1;
 }
@@ -190,8 +191,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
-document.addEventListener("click", function (event) {
-  if (event.target.tagName !== "A") {
-    return;
+document.addEventListener('click', function (event) {
+  if (event.target.tagName === 'A') {
+    viewSwap(event.target.dataset.view);
   }
 });

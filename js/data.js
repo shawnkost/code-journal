@@ -6,7 +6,7 @@ var data = {
     username: '',
     fullName: '',
     location: '',
-    avatarUrl: '',
+    avatarUrl: 'images/placeholder-image-square.jpg',
     bio: ''
   },
   entries: []
