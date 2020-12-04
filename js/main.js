@@ -138,6 +138,10 @@ var $formLocation = document.querySelector('#location');
 
 var $formBio = document.querySelector('#bio');
 
+var $entries = document.querySelectorAll('.entries-view')[0];
+
+var $createEntry = document.querySelectorAll('.create-entry-view')[0];
+
 function viewSwap(dataView, domResult) {
   domResult = domTree(data.profile);
   if (dataView !== $editProfile.dataset.view) {
@@ -175,6 +179,26 @@ function viewSwap(dataView, domResult) {
     $showProfile.appendChild(domResult);
 
   }
+
+  if (dataView !== $entries.dataset.view) {
+
+    $entries.className = 'hidden entries-view';
+
+  } else {
+
+    $entries.className = 'entries-view';
+  }
+
+  if (dataView !== $createEntry.dataset.view) {
+
+    $createEntry.className = 'hidden create-entry-view';
+
+  } else {
+
+    $createEntry.className = 'create-entry-view';
+
+  }
+
   data.view = dataView;
 }
 
@@ -193,7 +217,45 @@ document.addEventListener('DOMContentLoaded', function (event) {
 });
 
 document.addEventListener('click', function (event) {
+
   if (event.target.tagName === 'A' && data.profile.username !== '') {
+
     viewSwap(event.target.dataset.view);
+
   }
+
+});
+
+var $imageUrl = document.querySelector('#image-url');
+
+var $photoJournal = document.querySelector('.photo-journal');
+
+$imageUrl.addEventListener('input', function (event) {
+
+  $photoJournal.setAttribute('src', event.target.value);
+
+});
+
+var $form2 = document.querySelector('#form2');
+
+var newObj = {};
+
+$form2.addEventListener('submit', function (event) {
+
+  event.preventDefault();
+
+  newObj.imageUrl = event.target[0].value;
+
+  newObj.title = event.target[1].value;
+
+  newObj.notes = event.target[2].value;
+
+  data.entries = newObj;
+
+  $photoJournal.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  $form2.reset();
+
+  viewSwap('entries');
+
 });
