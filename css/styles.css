@@ -1,11 +1,22 @@
+body {
+  background-color: #d6fff6;
+}
+
 @media screen and (max-width: 375px) {
+  header {
+    background-color: #1c448e;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+
   header > h3 {
     margin: auto;
-    padding: 4% 0 0% 5%;
+    padding: 4% 4% 0% 5%;
     height: 60px;
     background-color: #1c448e;
     color: white;
     font-family: "Poppins", sans-serif;
+    display: inline-block;
   }
 
   form {
@@ -40,6 +51,7 @@
     height: 90px;
     margin-bottom: 2%;
     border: 2px solid black;
+    font-family: "PT Serif", serif;
   }
 
   .button-container {
@@ -72,22 +84,43 @@
 
   .bio-text {
     padding-left: 1%;
+    padding-bottom: 4%;
     font-family: "PT Serif", serif;
   }
 
   .container {
     padding: 0 5% 3% 3%;
   }
+
+  .button-link {
+    border-radius: 6px;
+    background-color: #f2cc8f;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    margin-left: 1%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 @media screen and (min-width: 376px) {
+  header {
+    background-color: #1c448e;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+
   header > h3 {
     margin: auto;
-    padding: 0.7% 0 0 20%;
+    padding: 0.7% 2% 0 20%;
     height: 60px;
     background-color: #1c448e;
     color: white;
     font-family: "Poppins", sans-serif;
+    display: inline-block;
   }
 
   form {
@@ -144,6 +177,7 @@
     height: 90px;
     margin-bottom: 1%;
     border: 2px solid black;
+    font-family: "PT Serif", serif;
   }
 
   .button-container {
@@ -181,5 +215,17 @@
 
   .container {
     padding-bottom: 1%;
+  }
+
+  .button-link {
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #f2cc8f;
+    font-family: "Poppins", sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
