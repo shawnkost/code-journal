@@ -1,7 +1,7 @@
 /* exported data */
 
 var data = {
-  view: 'edit-profile',
+  view: 'profile',
   profile: {
     username: '',
     fullName: '',

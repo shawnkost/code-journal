@@ -37,7 +37,6 @@ body {
     border: 2px solid black;
   }
 
-  input,
   label {
     font-family: "Poppins", sans-serif;
   }
@@ -75,7 +74,7 @@ body {
   }
 
   .img2 {
-    width: 94%;
+    width: 96%;
   }
 
   .detail-text {
@@ -119,7 +118,7 @@ body {
     margin-right: 40%;
   }
 
-  .entry-img {
+  .entry-photo-img {
     width: 96%;
   }
 
@@ -297,14 +296,15 @@ body {
     margin-right: 40%;
   }
 
-  .entry-img {
-    width: 75%;
-  }
-
   .entry-photo {
     padding-left: 18.5%;
+    padding-right: 2%;
     display: inline-block;
     width: 49%;
+  }
+
+  .entry-photo-img {
+    width: 100%;
   }
 
   .entry-text {

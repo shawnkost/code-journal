@@ -284,6 +284,7 @@ function entryTree(entries) {
 
     var $img2 = document.createElement('img');
     $img2.setAttribute('src', entries[i].imageUrl);
+    $img2.setAttribute('class', 'entry-photo-img');
     $div.appendChild($img2);
 
     var $div2 = document.createElement('div');
