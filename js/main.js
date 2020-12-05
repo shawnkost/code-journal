@@ -1,6 +1,9 @@
 var $avatar = document.querySelector('#avatar-url');
 
-// localStorage.setItem("code-journal", JSON.stringify(data));
+var localStorageItems = localStorage.getItem('code-journal');
+if (localStorageItems === undefined || localStorageItems === null) {
+  localStorage.setItem('code-journal', JSON.stringify(data));
+}
 
 var $img = document.querySelector('.img');
 
@@ -13,37 +16,28 @@ $avatar.addEventListener('input', function (event) {
 var $form = document.querySelector('form');
 
 $form.addEventListener('submit', function formEvent(event) {
+  event.preventDefault();
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
 
-  data.profile.avatarUrl = event.target[0].value;
+  localStorageItems.profile.avatarUrl = event.target[0].value;
 
-  data.profile.username = event.target[1].value;
+  localStorageItems.profile.username = event.target[1].value;
 
-  data.profile.fullName = event.target[2].value;
+  localStorageItems.profile.fullName = event.target[2].value;
 
-  data.profile.location = event.target[3].value;
+  localStorageItems.profile.location = event.target[3].value;
 
-  data.profile.bio = event.target[4].value;
+  localStorageItems.profile.bio = event.target[4].value;
 
-  viewSwap('profile', domResult);
+  localStorage.setItem('code-journal', JSON.stringify(localStorageItems));
 
-});
+  viewSwap('profile');
 
-var userData = localStorage.getItem('code-journal');
-
-if (userData !== null) {
-
-  data = JSON.parse(userData);
-
-}
-
-window.addEventListener('beforeunload', function (event) {
-
-  var dataJ = JSON.stringify(data);
-
-  localStorage.setItem('code-journal', dataJ);
 });
 
 function domTree(profile) {
+
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
 
   var div1 = document.createElement('div');
   div1.setAttribute('data-view', 'profile');
@@ -54,7 +48,7 @@ function domTree(profile) {
 
   var h1 = document.createElement('h1');
   h1.setAttribute('class', 'fname-text');
-  h1.textContent = data.profile.fullName;
+  h1.textContent = localStorageItems.profile.fullName;
   div2.appendChild(h1);
 
   var div3 = document.createElement('div');
@@ -67,7 +61,7 @@ function domTree(profile) {
 
   var userPhoto = document.createElement('img');
   userPhoto.setAttribute('class', 'img img2');
-  userPhoto.setAttribute('src', data.profile.avatarUrl);
+  userPhoto.setAttribute('src', localStorageItems.profile.avatarUrl);
   div4.appendChild(userPhoto);
 
   var div5 = document.createElement('div');
@@ -86,7 +80,7 @@ function domTree(profile) {
 
   var div7 = document.createElement('div');
   div7.setAttribute('class', 'detail-text username-text');
-  div7.textContent = data.profile.username;
+  div7.textContent = localStorageItems.profile.username;
   div6.appendChild(div7);
 
   var div8 = document.createElement('div');
@@ -101,7 +95,7 @@ function domTree(profile) {
 
   var div9 = document.createElement('div');
   div9.setAttribute('class', 'detail-text location-text');
-  div9.textContent = data.profile.location;
+  div9.textContent = localStorageItems.profile.location;
   div8.appendChild(div9);
 
   var div10 = document.createElement('div');
@@ -110,7 +104,7 @@ function domTree(profile) {
 
   var p1 = document.createElement('div');
   p1.setAttribute('class', 'bio-text bio-text1');
-  p1.textContent = data.profile.bio;
+  p1.textContent = localStorageItems.profile.bio;
   div10.appendChild(p1);
 
   var linkButton = document.createElement('a');
@@ -121,8 +115,6 @@ function domTree(profile) {
   div10.appendChild(linkButton);
   return div1;
 }
-
-var domResult = domTree(data.profile);
 
 var $editProfile = document.querySelectorAll('.profile-form')[0];
 
@@ -142,8 +134,11 @@ var $entries = document.querySelectorAll('.entries-view')[0];
 
 var $createEntry = document.querySelectorAll('.create-entry-view')[0];
 
-function viewSwap(dataView, domResult) {
-  domResult = domTree(data.profile);
+function viewSwap(dataView) {
+
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
+  var domResult = domTree(localStorageItems.profile);
+
   if (dataView !== $editProfile.dataset.view) {
 
     $editProfile.className = 'hidden profile-form';
@@ -152,17 +147,17 @@ function viewSwap(dataView, domResult) {
 
     $editProfile.className = 'profile-form';
 
-    $img.setAttribute('src', data.profile.avatarUrl);
+    $img.setAttribute('src', localStorageItems.profile.avatarUrl);
 
-    $formAvatar.value = data.profile.avatarUrl;
+    $formAvatar.value = localStorageItems.profile.avatarUrl;
 
-    $formUsername.value = data.profile.username;
+    $formUsername.value = localStorageItems.profile.username;
 
-    $formFname.value = data.profile.fullName;
+    $formFname.value = localStorageItems.profile.fullName;
 
-    $formLocation.value = data.profile.location;
+    $formLocation.value = localStorageItems.profile.location;
 
-    $formBio.value = data.profile.bio;
+    $formBio.value = localStorageItems.profile.bio;
 
   }
 
@@ -187,6 +182,11 @@ function viewSwap(dataView, domResult) {
   } else {
 
     $entries.className = 'entries-view';
+
+    localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
+
+    entryTree(localStorageItems.entries);
+
   }
 
   if (dataView !== $createEntry.dataset.view) {
@@ -199,29 +199,26 @@ function viewSwap(dataView, domResult) {
 
   }
 
-  data.view = dataView;
+  localStorageItems.view = dataView;
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
 
-  if (data.profile.username === '') {
-
+  if (localStorageItems.profile.username === '') {
     viewSwap('edit-profile');
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-
   } else {
-
-    viewSwap(data.view, domResult);
-
+    viewSwap(localStorageItems.view);
+    entryTree(localStorageItems.entries);
   }
 });
 
 document.addEventListener('click', function (event) {
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
 
-  if (event.target.tagName === 'A' && data.profile.username !== '') {
-
+  if (event.target.tagName === 'A' && localStorageItems.profile.username !== '') {
     viewSwap(event.target.dataset.view);
-
   }
 
 });
@@ -242,6 +239,8 @@ var newObj = {};
 
 $form2.addEventListener('submit', function (event) {
 
+  localStorageItems = JSON.parse(localStorage.getItem('code-journal'));
+
   event.preventDefault();
 
   newObj.imageUrl = event.target[0].value;
@@ -250,12 +249,54 @@ $form2.addEventListener('submit', function (event) {
 
   newObj.notes = event.target[2].value;
 
-  data.entries = newObj;
+  localStorageItems.entries.push(newObj);
 
   $photoJournal.setAttribute('src', 'images/placeholder-image-square.jpg');
+
+  localStorage.setItem('code-journal', JSON.stringify(localStorageItems));
 
   $form2.reset();
 
   viewSwap('entries');
 
 });
+
+function entryTree(entries) {
+  var $entryView = document.querySelector('.entries-view');
+  var $entryOl = document.querySelectorAll('.entry-ol');
+
+  for (var k = 0; k < $entryOl.length; k++) {
+    $entryOl[k].remove();
+  }
+
+  for (var i = 0; i < entries.length; i++) {
+    var $ol = document.createElement('ol');
+    $ol.setAttribute('class', 'entry-ol');
+
+    var $li1 = document.createElement('li');
+    $ol.appendChild($li1);
+
+    var $div = document.createElement('div');
+    $div.setAttribute('class', 'entry-photo');
+    $li1.appendChild($div);
+
+    var $img2 = document.createElement('img');
+    $img2.setAttribute('src', entries[i].imageUrl);
+    $img2.setAttribute('class', 'entry-photo-img');
+    $div.appendChild($img2);
+
+    var $div2 = document.createElement('div');
+    $div2.setAttribute('class', 'entry-text');
+    $li1.appendChild($div2);
+
+    var $h3 = document.createElement('h3');
+    $h3.textContent = entries[i].title;
+    $div2.appendChild($h3);
+
+    var $p = document.createElement('p');
+    $p.textContent = entries[i].notes;
+    $div2.appendChild($p);
+
+    $entryView.appendChild($ol);
+  }
+}
