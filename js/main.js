@@ -116,8 +116,6 @@ function domTree(profile) {
   return div1;
 }
 
-// var domResult = domTree(data.profile);
-
 var $editProfile = document.querySelectorAll('.profile-form')[0];
 
 var $showProfile = document.querySelectorAll('.show-profile')[0];
